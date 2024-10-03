@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>My game selection</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+							<header id="header">
+								<a href="index.html" class="logo"></strong> Thomas Baynham</a>
+								<ul class="icons">
+								<li><a href="https://github.com/Thomas-FullPower" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Games i have made and what I have learned from them</h1>
+									</header>
+
+
+									<p>On this page I will record some of the games that I have made, this will be some for uni projects and some i have worked on in my own time. This is all to show what i am capable of and my ability to learn fron doing any given project.</p>
+
+									<hr class="major" />
+
+									<h2>RPS QUEST</h2>
+									<p><span class="image right"><img src="images/pic02.jpg" alt="" />
+									<p><a href="https://github.com/Thomas-FullPower/TextBasedGame">The game on github</a></p>
+									<ul>
+										<li><b>C++</b></li>
+										<li><b>Object Oriented Programming</b></li>
+										<li><b>Github</b></li>
+										<li><b>Making changes after play testing</b></li>
+									</ul>
+
+									<p>This project was made specifically to be used on this portfolio as I thought a C++ Text based game would be perfect to show off my profficiency in C++ and any other programming consepts that would be needed. I use C++ specifically because it is efficient but also just what i most prefer to code in. Throughout the game I use loops to make sure any action the player uses that needs to be repeated can do so, Random Number Generation to make the enemies of the game attack randomly keeping the player on their feet and use of the input stream to allow the player to interact with the game. Due to being made in C++ the game is object oriented and there is a class for the player, the main game loop, the process of encountering an enemy and a class for each individual enemy witch is a child of the parent enemy class. The parent enemy class contains parameters for each of the stats all enemies share as well as functions for what the enemy will do when they pick rock, paper or scissors and this can be overwritten by the child classes to change to the unique enemy types. Programming like this makes the code a lot more readable as well as easier to implement new enemies into given sections of the game. </p>
+									<p>Due to the relitive simplicity of the project I didnt run into many major problems but there where a few notable difficulties. When I started the project I was still a little unsure on how object oriented programming works but as the project went on my understanding grew and I am now quite confident doing it and will be able to imploy that in most of my major projects in the future. The other problem is much more specific as throughout the project the user is told to press enter to continue but for some reason C++ allows you to buffer those button presses and this would allow the user to make inputs for actions they have not yet been shown, I didnt originally think this was a problem as when playing i knew to only press enter once but when the game was playtested I realised this completely broke the game and made it unplayble, to fix this I found a function that would take user input but would ignore any past input "system("PAUSE");". I think this project turned out well but there are a couple changes I will make in the future: I need to start commenting code as this will make it sygnificantly easier to read as well as giving better titles and descriptions to my Github commits. </p>
+									<p>The game uses a somewhat simple game loop as it will be in one of 3 "states" of sort and transition between them to continue playing. The game will start with Text explaing what is going on in the narritive before switching to an encounter and once the encounter is done the player will usually be given a choice to go further into the game or retreat to fight more enemies. During an encounter the player will be shown a prompt that eludes to what the enemy is going to do then given a choice of rock paper or scissors and this will repeat until either side looses all its health, if the player looses then the game will reset and if the enemy looses the game will continue. </p>
+
+									
+								</section>
+
+						</div>
+					</div>
+
+								<!-- Sidebar -->
+								<div id="sidebar">
+									<div class="inner">
+										<!-- Menu -->
+											<nav id="menu">
+												<header class="major">
+													<h2>Menu</h2>
+												</header>
+												<ul>
+													<li><a href="index.html">HOME</a></li>
+													<li><a href="generic.html">GAMES</a></li>
+													<li><a href="elements.html">EXPERIANCE</a></li>
+													
+												</ul>
+											</nav>
+			
+										
+			
+										<!-- Section -->
+											<section>
+												<header class="major">
+													<h2>Talk to me</h2>
+												</header>
+												<p>Get in contact if you'd like. Im happy to talk.</p>
+												<ul class="contact">
+													<li class="icon solid fa-envelope"><a href="#">Thomasbaynham2005@outlook.com</a></li>
+													<li class="icon solid fa-home">Im gonna link this website<br />
+													<li class="icon solid fa-home"><a href="https://github.com/Thomas-FullPower">My github</a><br />
+													
+												</ul>
+											</section>
+			
+										
+			
+									</div>
+								</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
