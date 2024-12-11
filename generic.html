@@ -50,11 +50,67 @@
 										<li><b>Making changes after play testing</b></li>
 									</ul>
 
-									<p>This project was made specifically to be used on this portfolio as I thought a C++ Text based game would be perfect to show off my profficiency in C++ and any other programming consepts that would be needed. I use C++ specifically because it is efficient but also just what i most prefer to code in. Throughout the game I use loops to make sure any action the player uses that needs to be repeated can do so, Random Number Generation to make the enemies of the game attack randomly keeping the player on their feet and use of the input stream to allow the player to interact with the game. Due to being made in C++ the game is object oriented and there is a class for the player, the main game loop, the process of encountering an enemy and a class for each individual enemy witch is a child of the parent enemy class. The parent enemy class contains parameters for each of the stats all enemies share as well as functions for what the enemy will do when they pick rock, paper or scissors and this can be overwritten by the child classes to change to the unique enemy types. Programming like this makes the code a lot more readable as well as easier to implement new enemies into given sections of the game. </p>
-									<p>Due to the relitive simplicity of the project I didnt run into many major problems but there where a few notable difficulties. When I started the project I was still a little unsure on how object oriented programming works but as the project went on my understanding grew and I am now quite confident doing it and will be able to imploy that in most of my major projects in the future. The other problem is much more specific as throughout the project the user is told to press enter to continue but for some reason C++ allows you to buffer those button presses and this would allow the user to make inputs for actions they have not yet been shown, I didnt originally think this was a problem as when playing i knew to only press enter once but when the game was playtested I realised this completely broke the game and made it unplayble, to fix this I found a function that would take user input but would ignore any past input "system("PAUSE");". I think this project turned out well but there are a couple changes I will make in the future: I need to start commenting code as this will make it sygnificantly easier to read as well as giving better titles and descriptions to my Github commits. </p>
-									<p>The game uses a somewhat simple game loop as it will be in one of 3 "states" of sort and transition between them to continue playing. The game will start with Text explaing what is going on in the narritive before switching to an encounter and once the encounter is done the player will usually be given a choice to go further into the game or retreat to fight more enemies. During an encounter the player will be shown a prompt that eludes to what the enemy is going to do then given a choice of rock paper or scissors and this will repeat until either side looses all its health, if the player looses then the game will reset and if the enemy looses the game will continue. </p>
+									<p>This project was made specifically to be used on this portfolio as I thought a C++ Text based game would be perfect to show off my proficiency in C++ and any other programming concepts that would be needed. I use C++ specifically because it is efficient but also just what I most prefer to code in. Throughout the game I use loops to make sure any action the player uses that needs to be repeated can do so, Random Number Generation to make the enemies of the game attack randomly keeping the player on their feet and use of the input stream to allow the player to interact with the game. Due to being made in C++ the game is object oriented and there is a class for the player, the main game loop, the process of encountering an enemy and a class for each individual enemy which is a child of the parent enemy class. The parent enemy class contains parameters for each of the stats all enemies share as well as functions for what the enemy will do when they pick rock, paper or scissors and this can be overwritten by the child classes to change to the unique enemy types. Programming like this makes the code a lot more readable as well as easier to implement new enemies into given sections of the game. </p>
+									<p>Due to the relative simplicity of the project, I didn’t run into many major problems but there were a few notable difficulties. When I started the project, I was still a little unsure on how object-oriented programming works but as the project went on my understanding grew and I am now quite confident doing it and will be able to employ that in most of my major projects in the future. The other problem is much more specific as throughout the project the user is told to press enter to continue but for some reason C++ allows you to buffer those button presses and this would allow the user to make inputs for actions they have not yet been shown, I didn’t originally think this was a problem as when playing I knew to only press enter once but when the game was play tested I realised this completely broke the game and made it unplayable, to fix this I found a function that would take user input but would ignore any past input "system("PAUSE");". I think this project turned out well but there are a couple changes I will make in the future: I need to start commenting code as this will make it significantly easier to read as well as giving better titles and descriptions to my GitHub commits. </p>
+									<p>The game uses a somewhat simple game loop as it will be in one of 3 "states" of sort and transition between them to continue playing. The game will start with Text explain what is going on in the narrative before switching to an encounter and once the encounter is done the player will usually be given a choice to go further into the game or retreat to fight more enemies. During an encounter the player will be shown a prompt that alludes to what the enemy is going to do then given a choice of rock paper or scissors and this will repeat until either side loses all its health, if the player loses then the game will reset and if the enemy loses the game will continue. </p>
 
-									
+									<hr class="major" />
+
+									<h2>Shadows fortune</h2>
+									<span class="image right">
+										<img src="images/ShadowsFortuneExample.png" alt="" width = "1000" float = right/>
+									</span>
+									<p><a href="https://github.com/Thomas-FullPower/UnityStealthGame">The game on github</a></p>
+									<ul>
+										<li><b>C#</b></li>
+										<li><b>Unity</b></li>
+										<li><b>Unity pathfinding</b></li>
+									</ul>
+
+									<p>This project was made as some of my university coursework, the task was to make a game in unity using framework they provided. The game I made is a top-down stealth game with a points system to allow replay ability. The game uses the unity engine and utilises the systems within it and includes use of the 2D colliders, 2D rigid bodies and ray casts. Most of the game is made with C# scripts that are implemented into the GameObjects within unity.</p>
+									<p>During this project I did run into a few problems, two major ones where: when enemies would switch between searching states, they would desync so only some enemies would lock onto the player when they are alerted, and I had problems sideloading the UI to stay on screen when the player would end and restart the game as it was never gotten rid of. The problem with the enemy state changing was that enemies would come out of alert a certain time after the player was spotted but any enemy that spotted the player during alert would restart this timer whereas the others would not and would just return to normal. To solve this problem, I had to make the enemy, send a signal back to the alert controller for seeing the enemy even when an alert was active, so it doesn’t send the end alert signal timer back too quickly. The problem with the UI was that it would stay on screen for a second run of the game leading there to be 2 UI on screen which caused confusion this was solved by simply having the UI be destroyed by the script that controls the end screen and makes that appear.</p>
+									<p>The game is a stealth game where you have 8 directional movement from a top-down perspective when enemies spot the player, they will chase the player until either line of sight is broken for long enough or the player dies. Within the game there are three kinds of enemies: enemies that stay in place and rotate, enemies that strafe left and right but can only look in one direction and an enemy that will walk around until it spots the player where it hunts them down. Throughout the game there will be large games laid on the floor that give the player points when collected this it to add replaybility as it is more difficult to collect the gems and if the player dies, they will lose points so there is an element of risk and reward. </p>
+
+									<hr class="major" />
+
+									<h2>Graphics project</h2>
+									<span class="image right">
+										<img src="images/GraphicProjectExample.png" alt="" width = "1000" float = right/>
+									</span>
+									<p><a href="https://github.com/Thomas-FullPower/GraphicsProject">The game on github</a></p>
+									<ul>
+										<li><b>C++</b></li>
+										<li><b>hlsl</b></li>
+										<li><b>Use of ShaderDoc</b></li>
+										<li><b>utilisation of an obj loader</b></li>
+									</ul>
+
+									<p>paragraph</p>
+									<p>paragraph</p>
+									<p>paragraph</p>
+								
+								
+								
+									<hr class="major" />
+
+									<h2>Multiplayer game</h2>
+									<span class="image right">
+										<img src="images/MultiplayerGameExample.png" alt="" width = "1000" float = right/>
+									</span>
+									<p><a href="https://github.com/Thomas-FullPower/TextBasedGame">The game on github</a></p>
+									<ul>
+										<li><b>C#</b></li>
+										<li><b>multithreadding</b></li>
+										<li><b>multiplayer games development</b></li>
+										<li><b>replication</b></li>
+									</ul>
+
+									<p>paragraph</p>
+									<p>paragraph</p>
+									<p>paragraph</p>
+
+
+
 								</section>
 
 						</div>
