@@ -85,9 +85,9 @@
 										<li><b>utilisation of an obj loader</b></li>
 									</ul>
 
-									<p>paragraph</p>
-									<p>paragraph</p>
-									<p>paragraph</p>
+									<p>As a part of one of my second-year university projects I was tasked with creating an engine that can display graphics with lighting in real time. This project isn’t a game but can display graphics in the same way a game would as it uses the same software and methods as used in some games. The objects that are displayed in the world are mostly random. This project uses DirectX11 in C++ to achieve this and uses HLSL for the shader code and during this project I was taught how to use shader doc to be able to debug my program when errors inevitably arise.</p>
+									<p>The world contains cubes that I have individually programmed the vertices and indices as well as multiple objects that I have pulled from files using an OBJ loader there is also a line as well as some simple terrain below it all and a skybox. Most of the objects in the world move and rotate in one way or another or have their sizes altered as well as two of the objects are slightly translucent and one of the cubes has a texture with completely transparent parts. The terrain was created by marking all the points horizontally on the Y axis before pulling a height map from the files and plotting the height onto each point on the plane that was just made. The skybox was made by creating indices for an inverted cube so that its visible from the inside and making a new shader that renders anything that uses it behind any preexisting object in the world, so the texture is always shown to the user.</p>
+									<p>A large problem I ran into while making this was difficulties when making the regular lighting shader. The lighting within the shader I used 3 different kinds of lighting ambient, diffuse and specular and when implementing them the problems came when implementing specular lighting. Specular lighting required I send more information across the buffer to the GPU and I had thought the variables would be sent across how they are but this was incorrect as the GPU has no way of receiving the variable names so it requires the data is sent across in the order it should be received so the data on the GPUs end is exactly the same. This could have stayed a problem when I created the skybox shader but by then I had made sure to confirm both ends get the same information.</p>
 								
 								
 								
