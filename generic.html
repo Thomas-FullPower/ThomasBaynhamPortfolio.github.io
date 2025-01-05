@@ -103,11 +103,12 @@
 										<li><b>multithreadding</b></li>
 										<li><b>multiplayer games development</b></li>
 										<li><b>replication</b></li>
+										<li><b>serialisation</b></li>
 									</ul>
 
-									<p>paragraph</p>
-									<p>paragraph</p>
-									<p>paragraph</p>
+									<p>One of my projects in the second year of university was to create a game that is multithreaded in C# that can connect online through a server. This project uses C# and within that uses threads as well as Monogame to connect the systems and display graphics on screen and the input system. The programs connect through another system which acts as the server and can allow one game playing at a time.</p>
+									<p>When creating this project, I had difficulty learning and implementing the threads to make it multithreaded, in the end I managed it by having each user have a thread for the game being played and for and for the socket that is connected to the other user as well as some more minor threads. This is directly related to the other main problem that occurred during the project that was the network connection and what data to send across the system. This was a problem because I had difficulty getting the packets to serialise and deserialise, this was because the packet classes would not properly deserialise if the classes didn’t have constructers without parameters, so the serialisation algorithm didn’t know what to do. Once the serialisation was fixed the data being set across was proper so that solved the problems with the data connection.</p>
+									<p>The game starts you out on a menu with two buttons where only one of the buttons works titled “Log in” once that is pressed it finds a server and connects the user to it and allows the second button to work. Once the second button is pressed it starts the game, during the game it waits for another player to join then the game starts. Within the game either player can move back, forth or jump as well as throw and axe and the player to hit the other 3 times wins and which causes the game to reset, and the players are put back to full health.</p>
 
 
 
