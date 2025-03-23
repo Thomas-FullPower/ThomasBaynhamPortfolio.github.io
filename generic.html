@@ -36,6 +36,26 @@
 
 									<p>On this page I will record some of the games that I have made, this will be some for uni projects and some i have worked on in my own time. This is all to show what i am capable of and my ability to learn fron doing any given project.</p>
 
+
+									<hr class="major" />
+
+									<h2>Shadows fortune</h2>
+									<span class="image right">
+										<iframe width=960 height=540 controls 
+											src="https://www.youtube.com/embed/txIBxK_RxBU">
+										</iframe>
+									</span>
+									<p><a href="https://github.com/Thomas-FullPower/UnityStealthGame">The game on github</a></p>
+									<ul>
+										<li><b>C#</b></li>
+										<li><b>Unity</b></li>
+										<li><b>Unity pathfinding</b></li>
+									</ul>
+
+									<p>This project was made as some of my university coursework, the task was to make a game in unity using framework they provided. The game I made is a top-down stealth game with a points system to allow replay ability. The game uses the unity engine and utilises the systems within it and includes use of the 2D colliders, 2D rigid bodies and ray casts. Most of the game is made with C# scripts that are implemented into the GameObjects within unity.</p>
+									<p>During this project I did run into a few problems, two major ones where: when enemies would switch between searching states, they would desync so only some enemies would lock onto the player when they are alerted, and I had problems sideloading the UI to stay on screen when the player would end and restart the game as it was never gotten rid of. The problem with the enemy state changing was that enemies would come out of alert a certain time after the player was spotted but any enemy that spotted the player during alert would restart this timer whereas the others would not and would just return to normal. To solve this problem, I had to make the enemy, send a signal back to the alert controller for seeing the enemy even when an alert was active, so it doesn’t send the end alert signal timer back too quickly. The problem with the UI was that it would stay on screen for a second run of the game leading there to be 2 UI on screen which caused confusion this was solved by simply having the UI be destroyed by the script that controls the end screen and makes that appear.</p>
+									<p>The game is a stealth game where you have 8 directional movement from a top-down perspective when enemies spot the player, they will chase the player until either line of sight is broken for long enough or the player dies. Within the game there are three kinds of enemies: enemies that stay in place and rotate, enemies that strafe left and right but can only look in one direction and an enemy that will walk around until it spots the player where it hunts them down. Throughout the game there will be large games laid on the floor that give the player points when collected this it to add replaybility as it is more difficult to collect the gems and if the player dies, they will lose points so there is an element of risk and reward. </p>
+
 									<hr class="major" />
 
 									<h2>RPS QUEST</h2>
@@ -59,26 +79,50 @@
 
 									<hr class="major" />
 
-									<h2>Shadows fortune</h2>
+									<h2>Multiplayer game</h2>
 									<span class="image right">
-										<iframe width=960 height=540 controls 
-											src="https://www.youtube.com/embed/txIBxK_RxBU">
+										<iframe width=1024 height=608 controls 
+											src="https://www.youtube.com/embed/al0fX0JDE2g">
 										</iframe>
 									</span>
-									<p><a href="https://github.com/Thomas-FullPower/UnityStealthGame">The game on github</a></p>
+									<p><a href="https://github.com/Thomas-FullPower/TextBasedGame">The game on github</a></p>
 									<ul>
 										<li><b>C#</b></li>
-										<li><b>Unity</b></li>
-										<li><b>Unity pathfinding</b></li>
+										<li><b>multithreadding</b></li>
+										<li><b>multiplayer games development</b></li>
+										<li><b>replication</b></li>
+										<li><b>serialisation</b></li>
 									</ul>
 
-									<p>This project was made as some of my university coursework, the task was to make a game in unity using framework they provided. The game I made is a top-down stealth game with a points system to allow replay ability. The game uses the unity engine and utilises the systems within it and includes use of the 2D colliders, 2D rigid bodies and ray casts. Most of the game is made with C# scripts that are implemented into the GameObjects within unity.</p>
-									<p>During this project I did run into a few problems, two major ones where: when enemies would switch between searching states, they would desync so only some enemies would lock onto the player when they are alerted, and I had problems sideloading the UI to stay on screen when the player would end and restart the game as it was never gotten rid of. The problem with the enemy state changing was that enemies would come out of alert a certain time after the player was spotted but any enemy that spotted the player during alert would restart this timer whereas the others would not and would just return to normal. To solve this problem, I had to make the enemy, send a signal back to the alert controller for seeing the enemy even when an alert was active, so it doesn’t send the end alert signal timer back too quickly. The problem with the UI was that it would stay on screen for a second run of the game leading there to be 2 UI on screen which caused confusion this was solved by simply having the UI be destroyed by the script that controls the end screen and makes that appear.</p>
-									<p>The game is a stealth game where you have 8 directional movement from a top-down perspective when enemies spot the player, they will chase the player until either line of sight is broken for long enough or the player dies. Within the game there are three kinds of enemies: enemies that stay in place and rotate, enemies that strafe left and right but can only look in one direction and an enemy that will walk around until it spots the player where it hunts them down. Throughout the game there will be large games laid on the floor that give the player points when collected this it to add replaybility as it is more difficult to collect the gems and if the player dies, they will lose points so there is an element of risk and reward. </p>
+									<p>One of my projects in the second year of university was to create a game that is multithreaded in C# that can connect online through a server. This project uses C# and within that uses threads as well as Monogame to connect the systems and display graphics on screen and the input system. The programs connect through another system which acts as the server and can allow one game playing at a time.</p>
+									<p>When creating this project, I had difficulty learning and implementing the threads to make it multithreaded, in the end I managed it by having each user have a thread for the game being played and for and for the socket that is connected to the other user as well as some more minor threads. This is directly related to the other main problem that occurred during the project that was the network connection and what data to send across the system. This was a problem because I had difficulty getting the packets to serialise and deserialise, this was because the packet classes would not properly deserialise if the classes didn’t have constructers without parameters, so the serialisation algorithm didn’t know what to do. Once the serialisation was fixed the data being set across was proper so that solved the problems with the data connection.</p>
+									<p>The game starts you out on a menu with two buttons where only one of the buttons works titled “Log in” once that is pressed it finds a server and connects the user to it and allows the second button to work. Once the second button is pressed it starts the game, during the game it waits for another player to join then the game starts. Within the game either player can move back, forth or jump as well as throw and axe and the player to hit the other 3 times wins and which causes the game to reset, and the players are put back to full health.</p>
+									
+									<hr class="major" />
+
+									<h2>Physics showcase</h2>
+									<span class="image right">
+										<iframe width=960 height=480 controls 
+											src="https://www.youtube.com/embed/Iqvok5Qqnuw">
+										</iframe>
+										
+									</span>
+									<p><a href="https://github.com/Thomas-FullPower/PhysicsShowcase">The game on github</a></p>
+									<ul>
+										<li><b>C++</b></li>
+										<li><b>DirectX11</b></li>
+										<li><b>Point mass physics</b></li>
+										<li><b>Rigid body physics</b></li>
+										<li><b>Using a timestep</b></li>
+									</ul>
+
+									<p>During the second term of the second year of university one of the projects I had to make was a physics simulation where everything is programmed by me in directX11. It contains a bunch of cubes that can be manipulated by the user to show off the physics. The framework is capable of point physics and rigid body physics and the framework can apply gravity to the objects and rotating them using quaternions. In this project I have also made a timestep so the system will not run slower or faster no matter the frame rate the program is running at.</p>
+									<p>There are 5 cubes in the world: 1 in front that can be controlled by the player and 4 behind it that are there to help show off the collision. Each cube in the world has a sphere collider and so when the controllable one is guided into the others, they will all collide appropriately, this will also account for more than 2 spheres colliding at once. Gravity can be turned on by the click of a button but since there is nothing for the cube to fall onto there is an option to turn off gravity and reset the position of any of the cubes. When the cubes collide, it they will rotate but this rotation is assuming that they are spheres as it uses a sphere collider, so this does look a little weird with them appearing as cubes. The user is also given the option to push each cube towards or away from a point in the centre of where everything appears. </p>
+									<p>A major problem I came across towards the end of this project was with the rotations of the cubes this was because the system only has axis aligned bounding boxes and spheres, the rotations of the cubes will always look inappropriate as without there being object oriented bounding boxes there is not enough data available of the boxes orientation to make it rotate and move appropriately. Another problem I ran into was early on before I had any force system implemented and I was implementing the timestep the box that I was moving to test the timestep was jittery and this showed me it was implemented incorrectly, in the end I found the problem was that when I implemented the timestep I originally made a miscalculation and the delta time ended up being far too low so I had the distance the cube was to be moved much higher as a result and so when delta time was fixed the cube would move much slower and at an inconsistent pace which caused the jittery effect this would also mean the cube would sometimes disappear because it would start moving super-fast which made the problem difficult to deduce. </p>
 
 									<hr class="major" />
 
-									<h2>Graphics project</h2>
+									<h2>Graphics showcase</h2>
 									<span class="image right">
 										<iframe width=1012 height=608 controls 
 											src="https://www.youtube.com/embed/wGGGYkDtMfM">
@@ -98,27 +142,7 @@
 								
 								
 								
-									<hr class="major" />
-
-									<h2>Multiplayer game</h2>
-									<span class="image right">
-										<iframe width=1024 height=608 controls 
-											src="https://www.youtube.com/embed/al0fX0JDE2g">
-										</iframe>
-									</span>
-									<p><a href="https://github.com/Thomas-FullPower/TextBasedGame">The game on github</a></p>
-									<ul>
-										<li><b>C#</b></li>
-										<li><b>multithreadding</b></li>
-										<li><b>multiplayer games development</b></li>
-										<li><b>replication</b></li>
-										<li><b>serialisation</b></li>
-									</ul>
-
-									<p>One of my projects in the second year of university was to create a game that is multithreaded in C# that can connect online through a server. This project uses C# and within that uses threads as well as Monogame to connect the systems and display graphics on screen and the input system. The programs connect through another system which acts as the server and can allow one game playing at a time.</p>
-									<p>When creating this project, I had difficulty learning and implementing the threads to make it multithreaded, in the end I managed it by having each user have a thread for the game being played and for and for the socket that is connected to the other user as well as some more minor threads. This is directly related to the other main problem that occurred during the project that was the network connection and what data to send across the system. This was a problem because I had difficulty getting the packets to serialise and deserialise, this was because the packet classes would not properly deserialise if the classes didn’t have constructers without parameters, so the serialisation algorithm didn’t know what to do. Once the serialisation was fixed the data being set across was proper so that solved the problems with the data connection.</p>
-									<p>The game starts you out on a menu with two buttons where only one of the buttons works titled “Log in” once that is pressed it finds a server and connects the user to it and allows the second button to work. Once the second button is pressed it starts the game, during the game it waits for another player to join then the game starts. Within the game either player can move back, forth or jump as well as throw and axe and the player to hit the other 3 times wins and which causes the game to reset, and the players are put back to full health.</p>
-
+									
 
 
 								</section>
